@@ -26,7 +26,7 @@ async function getGithubFileContent(username, repo, filePath, token) {
 const myUsername = 'ceronGithub';
 const myRepo = 'scheduler-records';
 const myFilePath = 'ceron.txt';
-// const myToken = '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';
+const myToken = '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';
 // Call the function and process the result
 getGithubFileContent(myUsername, myRepo, myFilePath, myToken)
   .then(content => {
