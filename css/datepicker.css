@@ -1,0 +1,26 @@
+#ui-datepicker-div{
+    height: 45vh !important;
+    width: 30vw;
+}
+
+.ui-datepicker table{
+    margin: 5px 0 .4em !important
+}
+
+.ui-datepicker table, tbody a{
+    background: black;
+}
+
+#ui-datepicker-div, .ui-datepicker .ui-datepicker-header{
+    color: white;
+    padding: 1em 0 !important;
+}
+
+#ui-datepicker-div, .ui-datepicker .ui-datepicker-next, .ui-datepicker-prev{
+    padding: 16px !important;
+}
+
+#ui-datepicker-div, .ui-datepicker th{
+    top: 50px;
+}
+

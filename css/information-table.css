@@ -1,0 +1,25 @@
+#information{
+    position: absolute;
+    top: 5vh;
+    left: 1vw;    
+    border: 5px dashed blue;
+    padding: 10px;
+}
+#information tbody{
+    width: 100%;
+    height: 100%;    
+}
+#information tbody, tr, td{
+    padding: 5px;    
+}
+
+#information tbody, input, textarea{
+    border: 1px solid;
+    padding: 4px;
+    width: 300px;
+}
+
+#information tbody, input[type="time"], #Booking0, #Booking1{
+    width: 120px;
+    padding: 5px 0;
+}

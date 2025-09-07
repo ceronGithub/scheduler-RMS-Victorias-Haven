@@ -1,0 +1,11 @@
+#promo{
+    position: absolute;
+    top: 5vh;
+    left: 36vw;    
+    border: 5px dashed gold;
+    padding: 10px;
+}
+
+#promo input[type="text"]{    
+    width: 180px;
+}

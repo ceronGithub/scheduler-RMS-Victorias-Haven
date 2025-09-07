@@ -1,0 +1,10 @@
+#time{
+    position: absolute;
+    top: 5vh;
+    left: 76.8vw; 
+    border: 5px dashed greenyellow;
+    padding: 10px;    
+}
+#time input[type="text"]{    
+    width: 130px;
+}

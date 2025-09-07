@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/page.css">
+
+    <!-- table -->
+    <link rel="stylesheet" href="css/information-table.css">
+    <link rel="stylesheet" href="css/promo-table.css">
+    <link rel="stylesheet" href="css/time-table.css">
+
+    <!-- datepicker -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="css/datepicker.css">
+
+    <!-- button -->
+     <link rel="stylesheet" href="css/button.css">
+
+</head>
+<body>
+    <div class="main-page">
+        <!-- <form action="" method="get"> -->
+            <table id="information">
+                <tbody>
+                    <tr>
+                        <td><label for="Name">Name:</label></td>
+                        <td><input type="text" id="Name" placeholder="Guest Name?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Booking">Booking Date:</label></td>
+                        <td><div class="date">From <input type="text" id="Booking0" required> To <input type="text" id="Booking1" required></div></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Phone-Number">Phone Number:</label></td>
+                        <td><input type="text" id="Phone-Number" placeholder="Guest Phone Number?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email">Email:</label></td>
+                        <td><input type="text" id="Email" placeholder="Guest Email?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Pax">Pax:</label></td>
+                        <td><input type="text" id="Pax" placeholder="Number of Pax?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Pet">Pet:</label></td>
+                        <td><input type="text" id="Pet" placeholder="Number of Pets?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Package">Package:</label></td>
+                        <td><input type="text" id="Package" placeholder="Package (Overnight / Day tour / Night tour)?" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Time">Time:</label></td>
+                        <td>From <input type="time" id="Time0" placeholder="Time?" required> To <input type="time" id="Time1" placeholder="Time?" required></td>                                    
+                    </tr>
+                    <tr>
+                        <td><label for="Downpayment">Downpayment:</label></td>
+                        <td><input type="text" id="Downpayment" placeholder="Downpayment." required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Balance">Balance:</label></td>
+                        <td><input type="text" id="Balance" placeholder="Remaining Balance." required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Comment">Comment:</label></td>
+                        <td><textarea name="" id="Comment" cols="30" rows="5" placeholder="Reminder here: Sample (Big breed 2, and extra 5 pax.)" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Submit">Record data:</label></td>
+                        <td><button id="Submit" type="submit" onclick="text_func()">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>            
+        <!-- </form> -->
+        
+        <form action="">
+            <table id="promo">
+                <thead>
+                    <tr>
+                        <th>Packages</th>
+                        <th>1 Room Price</th>
+                        <th>2 Rooms Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="overnight">Overnight</label></td>
+                        <td><input type="text" name="overnight" id="overnight" placeholder="Over Night Price" required></td>
+                        <td><input type="text" name="overnight1" id="overnight1" placeholder="Over Night Price" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dtour"></label>Day-Tour</td>
+                        <td><input type="text" name="" id="dtour" placeholder="Day Tour Price" required></td>
+                        <td><input type="text" name="" id="dtour1" placeholder="Day Tour Price" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ntour"></label>Night-Tour</td>
+                        <td><input type="text" name="" id="ntour" placeholder="Night Tour Price" required></td>
+                        <td><input type="text" name="" id="ntour1" placeholder="Night Tour Price" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="3day"></label>3 Days 2 nights</td>
+                        <td><input type="text" name="" id="3day" placeholder="3 Days 2 Nights Price" required></td>
+                        <td><input type="text" name="" id="3day1" placeholder="3 Days 2 Nights Price" required></td>
+                    </tr>                    
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Pet</th>
+                        <th>Small Breed Price</th>
+                        <th>Big Breed Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="petPrice"></label>Pet</td>
+                        <td><input type="text" name="" id="petPrice" placeholder="Small Breed Price" required></td>
+                        <td><input type="text" name="" id="petPrice1" placeholder="Big Breed Price" required></td>
+                    </tr>            
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Pax</th>
+                        <th>child (0-3 age) Price</th>
+                        <th>Adult Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="petPrice"></label>Pax Count</td>
+                        <td><input type="text" name="" id="pax" placeholder="Child Price" required></td>
+                        <td><input type="text" name="" id="pax1" placeholder="Adult Price" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for=""></label>Save record?</td>
+                        <td><button type="submit" id="Submit">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <!-- <form action="" method="get"> -->
+            <table id="time">
+                <thead>
+                    <tr>
+                        <th>Packages</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- t = time -->
+                    <tr>
+                        <td><label for="t-overnight">Overnight</label></td>
+                        <td><input type="text" name="" id="t-overnight" placeholder="Over Night Time" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="t-d-tour"></label>Day Tour</td>
+                        <td><input type="text" name="" id="t-d-tour" placeholder="Day Tour Time" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="t-n-tour"></label>Night Tour</td>
+                        <td><input type="text" name="" id="t-n-tour" placeholder="Night Tour Time" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="t-3-day"></label>3 Days 2 nights</td>
+                        <td><input type="text" name="" id="t-3-day" placeholder="3 Days 2 Nights Time" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for=""></label>Save record?</td>
+                        <td><button type="submit" id="Submit" onclick="save_func()">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        <!-- </form> -->
+
+        
+    </div>
+    <div class="page">
+        <label for="url"></label>
+        <input id="url" type="text">
+        <button id="fetch">Read</button>
+        <div class="trial">trial</div>    
+    </div>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- datePicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/datepicker.js"></script>
+
+    <!-- textFile -->
+     <script src="js/readTextFile.js"></script>
+     <script src="js/saveTextFile.js"></script>
+     <script src="js/fetchGithub.js"></script>
+</body>
+</html>
