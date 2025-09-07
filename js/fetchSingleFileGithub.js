@@ -32,6 +32,7 @@ getGithubFileContent(myUsername, myRepo, myFilePath, myToken)
   .then(content => {
     if (content) {
       console.log('File Content:');
-      var parseJson = JSON.parse(content);      
+      var parseJson = JSON.parse(content);   
+      console.log(parseJson[0]);
     }
   });

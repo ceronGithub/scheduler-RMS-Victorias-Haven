@@ -56,6 +56,8 @@ function text_func(){
     var Balance = document.getElementById("Balance").value;
     var Comment = document.getElementById("Comment").value;
 
+    var toArray = [];
+
     toArray.push(Name);
     toArray.push(Booking0);
     toArray.push(Booking1);
@@ -76,22 +78,5 @@ function text_func(){
     var anchor = document.createElement("a");
     anchor.href = URL.createObjectURL(file);
     anchor.download = Name+".txt";
-    anchor.URL = 
     anchor.click();
-}
-
-const fileUrls = [
-    'C:\\Users\\Ceron Calsena\\OneDrive\\Desktop\\portfolio\\scheduling\\text\\ceron.txt',
-];
-
-const btn1 = document.querySelector('#fetch');
-const urlTxt = document.querySelector('#url');
-const outputTxt = document.querySelector('.trial');
-
-btn1.addEventListener('click', ()=> {
-    alert('woring');
-});
-
-function outputer(val){
-    outputTxt.textContent = val;
 }
