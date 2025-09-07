@@ -1,24 +1,3 @@
-// $(document).ready(function(){
-
-//     $('.timeFrameBtn').click(function(){
-//         $time0 = $('#t-overnight').val();
-//         $time1 = $('#t-d-tour').val();
-//         $time2 = $('#t-n-tour').val();
-//         $time3 = $('#t-3-day').val();
-
-//         var toArray = [];
-
-//         toArray.push($time0);
-//         toArray.push($time1);
-//         toArray.push($time2);
-//         toArray.push($time3);
-
-//         $dataToJson = JSON.stringify(toArray);
-//         alert($dataToJson);
-//         file_put_contents('./text/face.txt', $dataToJson, FILE_APPEND | LOCK_EX);
-//         alert('working');
-//     });
-// });
 function save_func(){
     var time0 = document.getElementById("t-overnight").value;
     var time1 = document.getElementById("t-d-tour").value;
@@ -42,6 +21,7 @@ function save_func(){
 }
 
 function text_func(){
+     const now = new Date();
     var Name = document.getElementById("Name").value;
     var Booking0 = document.getElementById("Booking0").value;
     var Booking1 = document.getElementById("Booking1").value;
@@ -56,7 +36,7 @@ function text_func(){
     var Balance = document.getElementById("Balance").value;
     var Comment = document.getElementById("Comment").value;
 
-    var toArray = [];
+    var toArray = [];    
 
     toArray.push(Name);
     toArray.push(Booking0);
@@ -71,6 +51,7 @@ function text_func(){
     toArray.push(Downpayment);
     toArray.push(Balance);
     toArray.push(Comment);
+    toArray.push(new Date().toLocaleString());
 
     var toJson = JSON.stringify(toArray);
 
