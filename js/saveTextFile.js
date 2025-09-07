@@ -20,8 +20,7 @@ function save_func(){
     anchor.click();
 }
 
-function text_func(){
-     const now = new Date();
+function text_func(){     
     var Name = document.getElementById("Name").value;
     var Booking0 = document.getElementById("Booking0").value;
     var Booking1 = document.getElementById("Booking1").value;
@@ -59,5 +58,5 @@ function text_func(){
     var anchor = document.createElement("a");
     anchor.href = URL.createObjectURL(file);
     anchor.download = Name+".txt";
-    anchor.click();
+    anchor.click();    
 }

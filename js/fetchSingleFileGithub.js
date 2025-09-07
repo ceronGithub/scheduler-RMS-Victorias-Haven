@@ -1,3 +1,5 @@
+
+
 async function getGithubFileContent(username, repo, filePath, token) {
   const url = `https://api.github.com/repos/${username}/${repo}/contents/${filePath}`;
 
@@ -31,8 +33,9 @@ const myToken = 'github_pat_11A4QCPWQ0SuZ8lPjb8pOu_ck37tdlRXa9cbI8lYCwtrqUb9dz6j
 getGithubFileContent(myUsername, myRepo, myFilePath, myToken)
   .then(content => {
     if (content) {
-      console.log('File Content:');
+      console.log('File Content Singular:');
       var parseJson = JSON.parse(content);   
-      console.log(parseJson[0]);
+      console.log(parseJson);
     }
   });
+  

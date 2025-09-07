@@ -1,0 +1,9 @@
+.card-schedule-information{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.card-schedule-information input{
+    position: relative;
+    display: flex;
+}

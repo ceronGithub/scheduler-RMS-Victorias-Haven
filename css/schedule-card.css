@@ -1,0 +1,60 @@
+.card-scheduler-container{
+    position: relative;
+    display: inline-flex;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.card-schedule{
+    position: relative;      
+    display:flexbox;
+    top: 0;
+    left: 5px;
+    height: calc(100vw / 4.7);
+    width: calc(100vw / 8);
+    border: 4px solid black;
+    border-radius: 16px;
+    margin: 2px;
+}
+.schedule-date-today{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    border: 1px solid black; 
+    border-radius: 8px 8px 0 0;  
+    align-content: center;
+    text-align: center;
+}
+.schedule-row-title, .schedule-row-date, .schedule-row-package{
+    position: relative;
+    width: 100%;
+    height: 5vh;    
+    align-content: center;
+    text-align: center;
+    border: 1px solid black;     
+}
+
+.schedule-row, .schedule-row-DP{
+    position: relative;
+    display: flex;    
+    width: 100%;
+    height: 5vh;
+    align-content: center;
+    text-align: center;
+    border: 1px solid black;    
+}
+.schedule-cell, .schedule-cell-DP{
+    position: relative;      
+    width: calc(100% / 2);
+    height: 5vh;
+    align-content: center;
+    text-align: center;
+    border: 1px solid black; 
+}
+
+.schedule-row-DP, .schedule-cell-DP{
+    border: 1px solid transparent !important;
+}
