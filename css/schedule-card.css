@@ -19,7 +19,7 @@
     align-content: center;
     text-align: center;
 }
-.schedule-row-title, .schedule-row-date, .schedule-row-package{
+.schedule-row-guest, .schedule-row-date, .schedule-row-package{
     position: relative;
     width: 100%;
     height: 5vh;    

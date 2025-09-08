@@ -263,25 +263,25 @@ function createCalendarDateDynamic()
     const daysInLastMonth = dateForLastMonth.getDate();
 
     for(let day = 1; day <= daysInLastMonth; day++)
-    {      
-      console.log(daysInLastMonth);
+    {            
+      // create element div
       const createCard = document.createElement('div');
-
+      // created element div class name
       const cardName = "cardFor_"+monthString+day+year.getFullYear();
-
+      // created element div attributes
       createCard.setAttribute("class", "card-schedule "+cardName);
       // createDay.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));            
-
+      // send to HTML
       dynamicDates.appendChild(createCard);
 
-      const card_date_today = document.querySelector('.'+cardName);
-      card_date_today.innerHTML = "";
+      const card_class_name = document.querySelector('.'+cardName);
+      card_class_name.innerHTML = "";
 
       const createCard_card_date_today= document.createElement('div');
       const cardDate = "cardDateFor_"+monthString+day+year.getFullYear();
       createCard_card_date_today.setAttribute("class", "schedule-date-today "+cardDate);
 
-      card_date_today.appendChild(createCard_card_date_today);
+      card_class_name.appendChild(createCard_card_date_today);
 
       const card_date_today_objects = document.querySelector('.'+cardDate);
       card_date_today_objects.innerHTML = "";
@@ -293,6 +293,42 @@ function createCalendarDateDynamic()
 
       card_date_today_objects.appendChild(card_date_today_objects_h2);
       card_date_today_objects.appendChild(card_date_today_objects_h5);
+
+      // ================================================================
+
+      const createCard_guest_Header= document.createElement('div');
+      const cardName_guest_Header = "cardGuestHeaderFor_"+monthString+day+year.getFullYear();
+      createCard_guest_Header.setAttribute("class", "schedule-row-guest "+cardName_guest_Header);
+      card_class_name.appendChild(createCard_guest_Header);
+
+      const card_guest_header_objects = document.querySelector('.'+cardName_guest_Header);
+      card_guest_header_objects.innerHTML = "";
+
+      var card_guest_header_objects_h4 = document.createElement('h4');      
+      card_guest_header_objects_h4.innerHTML = 'Guest Name';
+      var card_guest_header_objects_h6 = document.createElement('h6');
+      card_guest_header_objects_h6.innerHTML = 'phone number';
+      
+      card_guest_header_objects.appendChild(card_guest_header_objects_h4);
+      card_guest_header_objects.appendChild(card_guest_header_objects_h6);
+
+
+      // ================================================================
+
+      const createCard_schedule_date = document.createElement('div');
+      const cardName_schedule_date = "cardScheduleDateFor_"+monthString+day+year.getFullYear();
+      createCard_schedule_date.setAttribute("class", "schedule-row-guest "+cardName_schedule_date);
+      card_class_name.appendChild(createCard_schedule_date);
+
+      const card_schedule_date_header_objects = document.querySelector('.'+cardName_schedule_date);
+      card_schedule_date_header_objects.innerHTML = "";
+
+      var card_schedule_date_header_objects_h5 = document.createElement('h5');      
+      card_schedule_date_header_objects_h5.innerHTML = 'Schedule Date: ';
+      var card_schedule_date_header_objects_h4 = document.createElement('h4');
+      card_schedule_date_header_objects_h4.innerHTML = '9/7/2025 - 9/8/2025';
+      card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h5);
+      card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h4);
     } 
   }
 }
