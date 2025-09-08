@@ -1,0 +1,10 @@
+
+.cardDynamicManipulation{    
+    overflow-x: scroll;        
+}
+.datesHere{
+    position: relative;
+    display: inline-flex;    
+}
+
+
