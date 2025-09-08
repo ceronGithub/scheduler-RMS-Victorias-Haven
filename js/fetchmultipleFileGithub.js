@@ -48,7 +48,8 @@ async function fetchTextFilesFromBranch() {
   return fileContents.filter(file => file !== null);
 }
 
-var toArray = [];
+var CheckInDateArray = [];
+var CheckOutDateArray = [];
 const dynamicInput = document.querySelector('.inputDynamicHere');
 
 const dynamicMonthsDates = document.querySelector('.manipulationHere');
@@ -93,13 +94,15 @@ fetchTextFilesFromBranch()
         newInputDateIn.setAttribute('placeholder', 'Name: ' + (toJson[1]));
         newInputDateIn.setAttribute('style', 'width:150px; visibility:hidden');
         newInputDateIn.setAttribute('value', (toJson[1]));
+        CheckInDateArray.push(toJson[1]);
 
         newInputDateOut.setAttribute('type', 'text');
         newInputDateOut.setAttribute('name', 'dynamicInputDateOut_' + i);
         newInputDateOut.setAttribute('id', 'dynamicInputDateOut_' + i);
         newInputDateOut.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputDateOut.setAttribute('style', 'width:150px; visibility:hidden');
+        newInputDateOut.setAttribute('style', 'width:150px; visibility:none');
         newInputDateOut.setAttribute('value', (toJson[2]));
+        CheckOutDateArray.push(toJson[2]);
 
         newInputPhoneNumber.setAttribute('type', 'text');
         newInputPhoneNumber.setAttribute('name', 'dynamicInputPhoneNumber_' + i);
@@ -207,7 +210,7 @@ fetchTextFilesFromBranch()
 
 function createCalendarDateDynamic()
 {
-  
+
   for(let Month = 0; Month < 12; Month++)
   {    
     // create objects
@@ -255,6 +258,11 @@ function createCalendarDateDynamic()
     {
       document.querySelector('#Title_'+Month).setAttribute("class", "notActiveMonth");
     }
+
+    //hight card Date
+    // check if this year
+    // check month
+    // check date
     
     // Create a new date object for the current year and month,
     // but set the day to 0 to get the last day of the previous month.
@@ -326,7 +334,7 @@ function createCalendarDateDynamic()
       var card_schedule_date_header_objects_h5 = document.createElement('h5');      
       card_schedule_date_header_objects_h5.innerHTML = 'Schedule Date: ';
       var card_schedule_date_header_objects_h4 = document.createElement('h4');
-      card_schedule_date_header_objects_h4.innerHTML = '9/7/2025 - 9/8/2025';
+      card_schedule_date_header_objects_h4.innerHTML = '? - ?';
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h5);
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h4);
 

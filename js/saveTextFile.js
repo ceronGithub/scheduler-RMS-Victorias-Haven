@@ -37,6 +37,8 @@ function text_func(){
 
     var toArray = [];    
 
+    alert(Booking0);
+
     toArray.push(Name);
     toArray.push(Booking0);
     toArray.push(Booking1);
