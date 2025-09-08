@@ -263,15 +263,36 @@ function createCalendarDateDynamic()
     const daysInLastMonth = dateForLastMonth.getDate();
 
     for(let day = 1; day <= daysInLastMonth; day++)
-    {
-      
+    {      
       console.log(daysInLastMonth);
-      const createDay = document.createElement('div');
+      const createCard = document.createElement('div');
 
-      createDay.setAttribute("class", "card-schedule");
-      createDay.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));
-            
-      dynamicDates.appendChild(createDay);
+      const cardName = "cardFor_"+monthString+day+year.getFullYear();
+
+      createCard.setAttribute("class", "card-schedule "+cardName);
+      // createDay.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));            
+
+      dynamicDates.appendChild(createCard);
+
+      const card_date_today = document.querySelector('.'+cardName);
+      card_date_today.innerHTML = "";
+
+      const createCard_card_date_today= document.createElement('div');
+      const cardDate = "cardDateFor_"+monthString+day+year.getFullYear();
+      createCard_card_date_today.setAttribute("class", "schedule-date-today "+cardDate);
+
+      card_date_today.appendChild(createCard_card_date_today);
+
+      const card_date_today_objects = document.querySelector('.'+cardDate);
+      card_date_today_objects.innerHTML = "";
+
+      const card_date_today_objects_h2 = document.createElement('h2');      
+      card_date_today_objects_h2.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));
+      const card_date_today_objects_h5 = document.createElement('h5');
+      card_date_today_objects_h5.innerHTML = new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {month: 'numeric', day: 'numeric', year: 'numeric'});
+
+      card_date_today_objects.appendChild(card_date_today_objects_h2);
+      card_date_today_objects.appendChild(card_date_today_objects_h5);
     } 
   }
 }
