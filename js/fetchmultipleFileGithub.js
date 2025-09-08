@@ -244,34 +244,46 @@ function createCalendarDateDynamic()
     Mar.innerHTML = day;
           
     dynamicDatesMar.appendChild(Mar);
-  } 
+  }
+
+
 
   for(let Month = 0; Month < 12; Month++)
   {
+    const dynamicH1 = document.createElement('h1');
     const dynamicMM = document.createElement('div');    
 
     dynamicMM.setAttribute("class", "cardDynamicManipulation");
-    dynamicMM.setAttribute("id", "dayHeader");
-    
-    dynamicMonthsDates.appendChild(dynamicMM);    
+    dynamicMM.setAttribute("id", "dayHeader_"+Month);
 
-    const dynamicDates = document.querySelector('#dayHeader');
+    dynamicH1.innerHTML = Month;
+    
+    dynamicMonthsDates.appendChild(dynamicH1);
+    dynamicMonthsDates.appendChild(dynamicMM);  
+    
+    const dynamicDates = document.querySelector('#dayHeader_'+Month);
     dynamicDates.innerHTML = "";
 
     const newDynamicMM = document.createElement('div');
-    newDynamicMM.setAttribute("id", "dayHere");
+    newDynamicMM.setAttribute("class", "datesHere");
+    newDynamicMM.setAttribute("id", "dayHere_"+Month);
 
-    dynamicDates.appendChild(newDynamicMM);
+    dynamicDates.appendChild(newDynamicMM);    
+  }
+  for(let Month = 0; Month < 12; Month++)
+  {
+    const dynamicDates = document.querySelector('#dayHere_'+Month);
+    dynamicDates.innerHTML = "";
 
     for(let day = 0; day < 31; day++)
     {
       const createDay = document.createElement('div');
 
       createDay.setAttribute("class", "card-schedule");
-      createDay.innerHTML = day;
+      createDay.innerHTML = "Month " + Month + " Day " + day;
             
       dynamicDates.appendChild(createDay);
-    }
+    } 
   }
 }
 
