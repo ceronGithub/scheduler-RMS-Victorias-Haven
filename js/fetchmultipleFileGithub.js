@@ -329,6 +329,118 @@ function createCalendarDateDynamic()
       card_schedule_date_header_objects_h4.innerHTML = '9/7/2025 - 9/8/2025';
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h5);
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h4);
+
+      // ================================================================
+
+      const createCard_package = document.createElement('div');
+      const cardName_package = "cardPackageFor_"+monthString+day+year.getFullYear();
+      createCard_package.setAttribute("class", "schedule-row-guest "+cardName_package);
+      card_class_name.appendChild(createCard_package);
+
+      const card_package_objects = document.querySelector('.'+cardName_package);
+      card_package_objects.innerHTML = "";
+
+      var card_package_objects_h6 = document.createElement('h6');      
+      card_package_objects_h6.innerHTML = 'Package:';
+      var card_package_objects_h4 = document.createElement('h4');
+      card_package_objects_h4.innerHTML = '2 Rooms Over-night';
+      card_package_objects.appendChild(card_package_objects_h6);
+      card_package_objects.appendChild(card_package_objects_h4);
+
+      // ================================================================
+      for(let rows = 1; rows <= 4; rows++)
+      {
+        const createCard_row = document.createElement('div');
+        const cardName_row = "cardRow"+rows+"For_"+monthString+day+year.getFullYear();
+        if(rows == 4)
+        {
+          createCard_row.setAttribute("class", "schedule-row-DP "+cardName_row);
+        }
+        else
+        {
+          createCard_row.setAttribute("class", "schedule-row "+cardName_row);
+        }        
+        card_class_name.appendChild(createCard_row);
+
+        const card_row_objects = document.querySelector('.'+cardName_row);
+        card_row_objects.innerHTML = "";
+
+        for(let cells = 1; cells <= 2; cells++){
+          const createCard_row_cell = document.createElement('div');
+          var cardName_row_cell = "cardRow"+rows+"Cell"+cells+"For_"+monthString+day+year.getFullYear();          
+          if(rows == 4)
+          {
+            createCard_row_cell.setAttribute("class", "schedule-cell-DP "+cardName_row_cell);
+          }
+          else
+          {
+            createCard_row_cell.setAttribute("class", "schedule-cell "+cardName_row_cell);
+          }          
+          card_row_objects.appendChild(createCard_row_cell);
+
+          const card_cells_name = document.querySelector('.'+cardName_row_cell);
+          card_cells_name.innerHTML = "";
+
+          var create_cell_objects_h6 = document.createElement('h6');      
+          // create_cell_objects_h5.innerHTML = 'Check-in:';
+          var create_cell_objects_h4 = document.createElement('h4');
+          // create_cell_objects_h4.innerHTML = '';
+
+          switch(rows)
+          {
+            case 1:
+            if(cells == 1)
+            {                 
+              create_cell_objects_h6.innerHTML = 'Check-in:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            else if(cells == 2)
+            {
+              create_cell_objects_h6.innerHTML = 'Check-Out:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            break;
+            case 2:
+            if(cells == 1)
+            {                 
+              create_cell_objects_h6.innerHTML = 'Pax:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            else if(cells == 2)
+            {
+              create_cell_objects_h6.innerHTML = 'Extra Pax:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            break;
+            case 3:
+            if(cells == 1)
+            {                 
+              create_cell_objects_h6.innerHTML = 'Pets (Small):';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            else if(cells == 2)
+            {
+              create_cell_objects_h6.innerHTML = 'Pets (Big):';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            break;
+            case 4:
+            if(cells == 1)
+            {                 
+              create_cell_objects_h6.innerHTML = 'Downpayment:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            else if(cells == 2)
+            {
+              create_cell_objects_h6.innerHTML = 'Balance:';            
+              create_cell_objects_h4.innerHTML = '-';
+            }
+            break;
+          }
+          card_cells_name.appendChild(create_cell_objects_h6);
+          card_cells_name.appendChild(create_cell_objects_h4);
+        }             
+      }     
     } 
   }
 }
