@@ -193,6 +193,7 @@ function createCalendarDateDynamic()
 
     const monthToday = year.getMonth();
 
+    // active month
     if(Month == monthToday)
     {
       //highlights the month today
@@ -217,7 +218,8 @@ function createCalendarDateDynamic()
       const cardName = "cardFor_"+monthString+day+year.getFullYear();      
       // double digit month, day      
       // created element div attributes      
-      createCard.setAttribute("class", "card-schedule "+cardName+" looking_"+doubleDigitMonth+day.toString().padStart(2, "0")+year.getFullYear());                 
+      createCard.setAttribute("id", "cardDateIdFor_"+Month+day);
+      createCard.setAttribute("class", "card-schedule "+cardName+" looking_"+doubleDigitMonth+day.toString().padStart(2, "0")+year.getFullYear());
       // send to HTML
       dynamicDates.appendChild(createCard);
 
@@ -397,10 +399,28 @@ function createCalendarDateDynamic()
     let ddd = splitDateInSched[1];
     let yyy = splitDateInSched[2];
     const card_date = mmm+ddd+yyy;
-    console.log(card_date);
-    const existing_card_date = document.querySelector('.looking_'+card_date);
-    existing_card_date.setAttribute('style', 'background:red;');
+    // highlights certain dates
+    const booked_card_date = document.querySelector('.looking_'+card_date);
+    booked_card_date.setAttribute('style', 'background:red;');
   }
+  // create a dynamic a for focus effect
+  const create_a_for_active_month = document.createElement('a');
+  create_a_for_active_month.setAttribute('id', 'Focus');
+  create_a_for_active_month.setAttribute('href', '#Title_'+new Date().getMonth()); 
+  
+  const create_a_for_active_dates = document.createElement('a');
+  create_a_for_active_dates.setAttribute('id', 'FocusOne');
+  create_a_for_active_dates.setAttribute('href', '#cardDateIdFor_'+new Date().getMonth()+new Date().getDate());
+
+  const put_object_to_main_page = document.querySelector('.main-page');
+  put_object_to_main_page.appendChild(create_a_for_active_month);
+  put_object_to_main_page.appendChild(create_a_for_active_dates); 
+  
+}
+
+window.onload = function(){
+  document.querySelector('#Focus').click();
+  document.querySelector('#FocusOne').click();
 }
 
 createCalendarDateDynamic();
