@@ -51,17 +51,10 @@ async function fetchTextFilesFromBranch() {
 var toArray = [];
 const dynamicInput = document.querySelector('.inputDynamicHere');
 
-const dynamicCalendar = document.querySelector('.calendarHere');
-const dynamicDatesJan = document.querySelector('.JanDatesHere');
-const dynamicDatesFeb = document.querySelector('.FebDatesHere');
-const dynamicDatesMar = document.querySelector('.MarDatesHere');
 const dynamicMonthsDates = document.querySelector('.manipulationHere');
 
 dynamicInput.innerHTML = "";
 
-dynamicDatesJan.innerHTML = "";
-dynamicDatesFeb.innerHTML = "";
-dynamicDatesMar.innerHTML = "";
 dynamicMonthsDates.innerHTML = "";
 
 // Example usage
@@ -212,54 +205,23 @@ fetchTextFilesFromBranch()
   }
 });
 
-
-
 function createCalendarDateDynamic()
 {
-  for(let day = 1; day <= 31; day++)
-  {
-    const Jan = document.createElement('div');
-
-    Jan.setAttribute("class", "card-schedule");
-    Jan.innerHTML = day;
-    
-    dynamicDatesJan.appendChild(Jan);
-  }
-
-  for(let day = 1; day <= 31; day++)
-  {
-    const Feb = document.createElement('div');
-
-    Feb.setAttribute("class", "card-schedule");
-    Feb.innerHTML = day;
-          
-    dynamicDatesFeb.appendChild(Feb);
-  }  
-
-  for(let day = 1; day <= 31; day++)
-  {
-    const Mar = document.createElement('div');
-
-    Mar.setAttribute("class", "card-schedule");
-    Mar.innerHTML = day;
-          
-    dynamicDatesMar.appendChild(Mar);
-  }
-
-
-
+  
   for(let Month = 0; Month < 12; Month++)
-  {
+  {    
     const dynamicH1 = document.createElement('h1');
     const dynamicMM = document.createElement('div');    
 
     dynamicMM.setAttribute("class", "cardDynamicManipulation");
     dynamicMM.setAttribute("id", "dayHeader_"+Month);
 
+    dynamicH1.setAttribute("id", "Title_"+Month);
     dynamicH1.innerHTML = Month;
-    
+
+    dynamicMonthsDates.appendChild(document.createElement("br"));
     dynamicMonthsDates.appendChild(dynamicH1);
-    dynamicMonthsDates.appendChild(dynamicMM);  
+    dynamicMonthsDates.appendChild(dynamicMM);
     
     const dynamicDates = document.querySelector('#dayHeader_'+Month);
     dynamicDates.innerHTML = "";
@@ -272,8 +234,13 @@ function createCalendarDateDynamic()
   }
   for(let Month = 0; Month < 12; Month++)
   {
-    const dynamicDates = document.querySelector('#dayHere_'+Month);
+    const dynamicDates = document.querySelector('#dayHere_'+Month);    
     dynamicDates.innerHTML = "";
+    
+    const year = new Date();
+    const month = new Date(year.getFullYear(), Month, 15);
+    const monthString = month.toLocaleString('default', { month: 'long' });
+    document.querySelector('#Title_'+Month).innerHTML = monthString;
 
     for(let day = 0; day < 31; day++)
     {
