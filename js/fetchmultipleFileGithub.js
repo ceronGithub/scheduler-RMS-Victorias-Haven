@@ -48,168 +48,109 @@ async function fetchTextFilesFromBranch() {
   return fileContents.filter(file => file !== null);
 }
 
-var CheckInDateArray = [];
-var CheckOutDateArray = [];
-const dynamicInput = document.querySelector('.inputDynamicHere');
+// const dynamicInput = document.querySelector('.inputDynamicHere');
 
 const dynamicMonthsDates = document.querySelector('.manipulationHere');
 
-dynamicInput.innerHTML = "";
+// dynamicInput.innerHTML = "";
 
 dynamicMonthsDates.innerHTML = "";
 
+
+const Name = [];
+const DateIn = [];
+const DateOut = [];
+const PhoneNumber = [];
+const Email = [];
+const Pax = [];
+const ExtraPax = [];
+const Pet = [];
+const Package = [];
+const CheckIn = [];
+const CheckOut = [];
+const DP = [];
+const Balance = [];
+const Comment = [];
+const DataCreated = [];
+const FileCount = [];
 // Example usage
 fetchTextFilesFromBranch()
   .then(files => {
   if (files) {
     files.forEach(function(value, i) {
-        var toJson = JSON.parse(value);
-        const newInputName = document.createElement('input');
-        const newInputDateIn = document.createElement('input');
-        const newInputDateOut = document.createElement('input');
-        const newInputPhoneNumber = document.createElement('input');
-        const newInputEmail = document.createElement('input');
-        const newInputPax = document.createElement('input');
-        const newInputExtraPax = document.createElement('input');
-        const newInputPet = document.createElement('input');
-        const newInputPackage = document.createElement('input');
-        const newInputcheckIn = document.createElement('input');
-        const newInputCheckOut = document.createElement('input');
-        const newInputDP = document.createElement('input');
-        const newInputBalance = document.createElement('input');
-        const newInputComment = document.createElement('textarea');
-        const newInputDataCreated = document.createElement('input');
-        
-        // Set attributes for the input
-        newInputName.setAttribute('type', 'text');
-        newInputName.setAttribute('name', 'dynamicInputName_' + i);
-        newInputName.setAttribute('id', 'dynamicInputName_' + i);
-        newInputName.setAttribute('placeholder', 'Name: ' + (toJson[0]));
-        newInputName.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputName.setAttribute('value', (toJson[0]));
-
-        newInputDateIn.setAttribute('type', 'text');
-        newInputDateIn.setAttribute('name', 'dynamicInputDateIn_' + i);
-        newInputDateIn.setAttribute('id', 'dynamicInputDateIn_' + i);
-        newInputDateIn.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputDateIn.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputDateIn.setAttribute('value', (toJson[1]));
-        CheckInDateArray.push(toJson[1]);
-
-        newInputDateOut.setAttribute('type', 'text');
-        newInputDateOut.setAttribute('name', 'dynamicInputDateOut_' + i);
-        newInputDateOut.setAttribute('id', 'dynamicInputDateOut_' + i);
-        newInputDateOut.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputDateOut.setAttribute('style', 'width:150px; visibility:none');
-        newInputDateOut.setAttribute('value', (toJson[2]));
-        CheckOutDateArray.push(toJson[2]);
-
-        newInputPhoneNumber.setAttribute('type', 'text');
-        newInputPhoneNumber.setAttribute('name', 'dynamicInputPhoneNumber_' + i);
-        newInputPhoneNumber.setAttribute('id', 'dynamicInputPhoneNumber_' + i);
-        newInputPhoneNumber.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputPhoneNumber.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputPhoneNumber.setAttribute('value', (toJson[3]));
-
-        newInputEmail.setAttribute('type', 'text');
-        newInputEmail.setAttribute('name', 'dynamicInputEmail_' + i);
-        newInputEmail.setAttribute('id', 'dynamicInputEmail_' + i);
-        newInputEmail.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputEmail.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputEmail.setAttribute('value', (toJson[4]));
-
-        newInputPax.setAttribute('type', 'text');
-        newInputPax.setAttribute('name', 'dynamicInputPax_' + i);
-        newInputPax.setAttribute('id', 'dynamicInputPax_' + i);
-        newInputPax.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputPax.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputPax.setAttribute('value', (toJson[5]));
-
-        newInputExtraPax.setAttribute('type', 'text');
-        newInputExtraPax.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputExtraPax.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputExtraPax.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputExtraPax.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputExtraPax.setAttribute('value', 0);
-
-        newInputPet.setAttribute('type', 'text');
-        newInputPet.setAttribute('name', 'dynamicInputPet_' + i);
-        newInputPet.setAttribute('id', 'dynamicInputPet_' + i);
-        newInputPet.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputPet.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputPet.setAttribute('value', (toJson[6]));
-
-        newInputPackage.setAttribute('type', 'text');
-        newInputPackage.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputPackage.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputPackage.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputPackage.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputPackage.setAttribute('value', (toJson[7]));
-
-        newInputcheckIn.setAttribute('type', 'text');
-        newInputcheckIn.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputcheckIn.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputcheckIn.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputcheckIn.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputcheckIn.setAttribute('value', (toJson[8]));
-
-        newInputCheckOut.setAttribute('type', 'text');
-        newInputCheckOut.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputCheckOut.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputCheckOut.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputCheckOut.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputCheckOut.setAttribute('value', (toJson[9]));
-
-        newInputDP.setAttribute('type', 'text');
-        newInputDP.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputDP.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputDP.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputDP.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputDP.setAttribute('value', (toJson[10]));
-        
-        newInputBalance.setAttribute('type', 'text');
-        newInputBalance.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputBalance.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputBalance.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputBalance.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputBalance.setAttribute('value', (toJson[11]));
-          
-        newInputComment.setAttribute('name', 'dynamicInputComment_' + i);
-        newInputComment.setAttribute('id', 'dynamicInputComment_' + i);
-        newInputComment.setAttribute('placeholder', 'comment');
-        newInputComment.setAttribute('style', 'width:150px; visibility:hidden');        
-        newInputComment.innerHTML = toJson[12];
-
-        newInputDataCreated.setAttribute('type', 'text');
-        newInputDataCreated.setAttribute('name', 'dynamicInputExtraPax_' + i);
-        newInputDataCreated.setAttribute('id', 'dynamicInputExtraPax_' + i);
-        newInputDataCreated.setAttribute('placeholder', 'Name: ' + (toJson[1]));
-        newInputDataCreated.setAttribute('style', 'width:150px; visibility:hidden');
-        newInputDataCreated.setAttribute('value', (toJson[13]));        
-              
-        dynamicInput.appendChild(newInputName);
-        dynamicInput.appendChild(newInputDateIn);
-        dynamicInput.appendChild(newInputDateOut);        
-        dynamicInput.appendChild(newInputPhoneNumber);
-        dynamicInput.appendChild(newInputEmail);
-        dynamicInput.appendChild(newInputPax);
-        dynamicInput.appendChild(newInputExtraPax);
-        dynamicInput.appendChild(newInputPet);
-        dynamicInput.appendChild(newInputPackage);
-        dynamicInput.appendChild(newInputcheckIn);
-        dynamicInput.appendChild(newInputCheckOut);
-        dynamicInput.appendChild(newInputDP);
-        dynamicInput.appendChild(newInputBalance);
-        dynamicInput.appendChild(newInputComment);
-        dynamicInput.appendChild(newInputDataCreated);                
-        dynamicInput.appendChild(document.createElement('br'));
-        dynamicInput.appendChild(document.createElement('br'));
+      var toJson = JSON.parse(value);
+      Name.push(toJson[0]);
+      DateIn.push(toJson[1]);
+      DateOut.push(toJson[2]);
+      PhoneNumber.push(toJson[3]);
+      Email.push(toJson[4]);
+      Pax.push(toJson[5]);
+      ExtraPax.push(0);
+      Pet.push(toJson[6]);
+      Package.push(toJson[7]);
+      CheckIn.push(toJson[8]);
+      CheckOut.push(toJson[9]);
+      DP.push(toJson[10]);
+      Balance.push(toJson[11]);
+      Comment.push(toJson[12]);
+      DataCreated.push(toJson[13]);            
     });
-  }
+  }    
+  localStorage.setItem('Name_record', Name);
+  localStorage.setItem('DateIn_record', DateIn);
+  localStorage.setItem('DateOut_record', DateOut);
+  localStorage.setItem('PhoneNumber_record', PhoneNumber);
+  localStorage.setItem('Email_record', Email);
+  localStorage.setItem('Pax_record', Pax);
+  localStorage.setItem('ExtraPax_record', ExtraPax);
+  localStorage.setItem('Pet_record', Pet);
+  localStorage.setItem('Package_record', Package);
+  localStorage.setItem('CheckIn_record', CheckIn);
+  localStorage.setItem('CheckOut_record', CheckOut);
+  localStorage.setItem('DP_record', DP);
+  localStorage.setItem('Balance_record', Balance);
+  localStorage.setItem('Comment_record', Comment);
+  localStorage.setItem('DataCreated_record', DataCreated);
+  localStorage.setItem('FileCount_record', files.length);
 });
 
 function createCalendarDateDynamic()
-{
+{  
+  const getName = localStorage.getItem('Name_record');
+  const getDateIn = localStorage.getItem('DateIn_record');
+  const getDateOut = localStorage.getItem('DateOut_record');
+  const getPhoneNumber = localStorage.getItem('PhoneNumber_record');
+  const getEmail = localStorage.getItem('Email_record');
+  const getPax = localStorage.getItem('Pax_record');
+  const getExtraPax = localStorage.getItem('ExtraPax_record');
+  const getPet = localStorage.getItem('Pet_record');
+  const getPackage = localStorage.getItem('Package_record');
+  const getCheckIn = localStorage.getItem('CheckIn_record');
+  const getCheckOut = localStorage.getItem('CheckOut_record');
+  const getDP = localStorage.getItem('DP_record');
+  const getBalance = localStorage.getItem('Balance_record');
+  const getComment = localStorage.getItem('Comment_record');
+  const getDataCreated = localStorage.getItem('DataCreated_record');
+
+  const getFileCount = localStorage.getItem('FileCount_record');
+  var convertToIntCountFiles = parseInt(getFileCount);
+
+  let splittedName = getName.split(',');
+  let splittedDateIn = getDateIn.split(',');
+  let splittedDateOut = getDateOut.split(',');
+  let splittedPhoneNumber = getPhoneNumber.split(',');
+  let splittedEmail = getEmail.split(',');
+  let splittedPax = getPax.split(',');
+  let splittedExtraPax = getExtraPax.split(',');
+  let splittedPet = getPet.split(',');
+  let splittedPackage = getPackage.split(',');
+  let splittedCheckIn = getCheckIn.split(',');
+  let splittedCheckOut = getCheckOut.split(',');
+  let splittedDP = getDP.split(',');
+  let splittedBalance = getBalance.split(',');
+  let splittedComment = getComment.split(',');
+  let splittedDataCreated = getDataCreated.split(','); 
+
 
   for(let Month = 0; Month < 12; Month++)
   {    
@@ -244,8 +185,10 @@ function createCalendarDateDynamic()
     dynamicDates.innerHTML = "";
     
     const year = new Date();
-    const month = new Date(year.getFullYear(), Month);    
-    const monthString = month.toLocaleString('default', { month: 'long' });    
+    const month = new Date(year.getFullYear(), Month);        
+    const monthString = month.toLocaleString('default', { month: 'long' }); 
+    const doubleDigitMonth = month.toLocaleString('default', { month: '2-digit' });
+    
     document.querySelector('#Title_'+Month).innerHTML = monthString +" / " + year.getFullYear();
 
     const monthToday = year.getMonth();
@@ -258,15 +201,11 @@ function createCalendarDateDynamic()
     {
       document.querySelector('#Title_'+Month).setAttribute("class", "notActiveMonth");
     }
-
-    //hight card Date
-    // check if this year
-    // check month
-    // check date
     
     // Create a new date object for the current year and month,
     // but set the day to 0 to get the last day of the previous month.
-    const dateForLastMonth = new Date(year.getFullYear(), Month + 1, 0);
+    const dateForLastMonth = new Date(year.getFullYear(), Month + 1, 0);   
+    
     // Get the number of days from the date object
     const daysInLastMonth = dateForLastMonth.getDate();
 
@@ -275,10 +214,10 @@ function createCalendarDateDynamic()
       // create element div
       const createCard = document.createElement('div');
       // created element div class name
-      const cardName = "cardFor_"+monthString+day+year.getFullYear();
-      // created element div attributes
-      createCard.setAttribute("class", "card-schedule "+cardName);
-      // createDay.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));            
+      const cardName = "cardFor_"+monthString+day+year.getFullYear();      
+      // double digit month, day      
+      // created element div attributes      
+      createCard.setAttribute("class", "card-schedule "+cardName+" looking_"+doubleDigitMonth+day.toString().padStart(2, "0")+year.getFullYear());                 
       // send to HTML
       dynamicDates.appendChild(createCard);
 
@@ -448,8 +387,19 @@ function createCalendarDateDynamic()
           card_cells_name.appendChild(create_cell_objects_h6);
           card_cells_name.appendChild(create_cell_objects_h4);
         }             
-      }     
-    } 
+      }           
+    }      
+  }
+  for(let ddates = 0; ddates < convertToIntCountFiles; ddates++)
+  {
+    let splitDateInSched = splittedDateIn[ddates].split('/');
+    let mmm = splitDateInSched[0];
+    let ddd = splitDateInSched[1];
+    let yyy = splitDateInSched[2];
+    const card_date = mmm+ddd+yyy;
+    console.log(card_date);
+    const existing_card_date = document.querySelector('.looking_'+card_date);
+    existing_card_date.setAttribute('style', 'background:red;');
   }
 }
 

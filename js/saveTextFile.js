@@ -35,9 +35,7 @@ function text_func(){
     var Balance = document.getElementById("Balance").value;
     var Comment = document.getElementById("Comment").value;
 
-    var toArray = [];    
-
-    alert(Booking0);
+    var toArray = [];        
 
     toArray.push(Name);
     toArray.push(Booking0);
