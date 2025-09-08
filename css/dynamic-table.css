@@ -5,6 +5,11 @@
     position: relative;
     display: inline-flex;    
 }
-
+.activeMonth{
+    color: greenyellow;
+}
+.notActiveMonth{
+    color: gray;
+}
 
 

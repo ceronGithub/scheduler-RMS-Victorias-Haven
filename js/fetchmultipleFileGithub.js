@@ -217,10 +217,11 @@ function createCalendarDateDynamic()
     // set objects property
     dynamicMM.setAttribute("class", "cardDynamicManipulation");
     dynamicMM.setAttribute("id", "dayHeader_"+Month);
-    
+        
     dynamicH1.setAttribute("id", "Title_"+Month);
     dynamicH1.innerHTML = Month;
 
+    // send dynamic objects to HTML
     dynamicMonthsDates.appendChild(document.createElement("br"));
     dynamicMonthsDates.appendChild(dynamicH1);
     dynamicMonthsDates.appendChild(dynamicMM);
@@ -240,23 +241,35 @@ function createCalendarDateDynamic()
     dynamicDates.innerHTML = "";
     
     const year = new Date();
-    const month = new Date(year.getFullYear(), Month);
-    const monthString = month.toLocaleString('default', { month: 'long' });
+    const month = new Date(year.getFullYear(), Month);    
+    const monthString = month.toLocaleString('default', { month: 'long' });    
     document.querySelector('#Title_'+Month).innerHTML = monthString +" / " + year.getFullYear();
 
-    const monthToday = year.getMonth() + 1;
+    const monthToday = year.getMonth();
 
     if(Month == monthToday)
     {
       //highlights the month today
-      document.querySelector('#dayHeader_'+Month)
-    }
-    for(let day = 0; day <= 31; day++)
+      document.querySelector('#Title_'+Month).setAttribute("class", "activeMonth");
+    }else
     {
+      document.querySelector('#Title_'+Month).setAttribute("class", "notActiveMonth");
+    }
+    
+    // Create a new date object for the current year and month,
+    // but set the day to 0 to get the last day of the previous month.
+    const dateForLastMonth = new Date(year.getFullYear(), Month + 1, 0);
+    // Get the number of days from the date object
+    const daysInLastMonth = dateForLastMonth.getDate();
+
+    for(let day = 1; day <= daysInLastMonth; day++)
+    {
+      
+      console.log(daysInLastMonth);
       const createDay = document.createElement('div');
 
       createDay.setAttribute("class", "card-schedule");
-      createDay.innerHTML = "Month " + Month + " Day " + day;
+      createDay.innerHTML = (new Date(year.getFullYear(), Month, day).toLocaleString("en-US", {weekday: "long"}));
             
       dynamicDates.appendChild(createDay);
     } 
