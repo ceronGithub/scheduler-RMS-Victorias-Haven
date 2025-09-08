@@ -210,12 +210,14 @@ function createCalendarDateDynamic()
   
   for(let Month = 0; Month < 12; Month++)
   {    
+    // create objects
     const dynamicH1 = document.createElement('h1');
     const dynamicMM = document.createElement('div');    
 
+    // set objects property
     dynamicMM.setAttribute("class", "cardDynamicManipulation");
     dynamicMM.setAttribute("id", "dayHeader_"+Month);
-
+    
     dynamicH1.setAttribute("id", "Title_"+Month);
     dynamicH1.innerHTML = Month;
 
@@ -238,11 +240,18 @@ function createCalendarDateDynamic()
     dynamicDates.innerHTML = "";
     
     const year = new Date();
-    const month = new Date(year.getFullYear(), Month, 15);
+    const month = new Date(year.getFullYear(), Month);
     const monthString = month.toLocaleString('default', { month: 'long' });
-    document.querySelector('#Title_'+Month).innerHTML = monthString;
+    document.querySelector('#Title_'+Month).innerHTML = monthString +" / " + year.getFullYear();
 
-    for(let day = 0; day < 31; day++)
+    const monthToday = year.getMonth() + 1;
+
+    if(Month == monthToday)
+    {
+      //highlights the month today
+      document.querySelector('#dayHeader_'+Month)
+    }
+    for(let day = 0; day <= 31; day++)
     {
       const createDay = document.createElement('div');
 
