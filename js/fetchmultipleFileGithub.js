@@ -201,7 +201,7 @@ function createCalendarDateDynamic()
     }else
     {
       document.querySelector('#Title_'+Month).setAttribute("class", "notActiveMonth");
-    }
+    } 
     
     // Create a new date object for the current year and month,
     // but set the day to 0 to get the last day of the previous month.
@@ -211,14 +211,14 @@ function createCalendarDateDynamic()
     const daysInLastMonth = dateForLastMonth.getDate();
 
     for(let day = 1; day <= daysInLastMonth; day++)
-    {            
+    {                      
       // create element div
       const createCard = document.createElement('div');
       // created element div class name
       const cardName = "cardFor_"+monthString+day+year.getFullYear();      
       // double digit month, day      
       // created element div attributes      
-      createCard.setAttribute("id", "cardDateIdFor_"+Month+day);
+      createCard.setAttribute("id", "cardDateIdFor_"+(Month+1)+day);
       createCard.setAttribute("class", "card-schedule "+cardName+" looking_"+doubleDigitMonth+day.toString().padStart(2, "0")+year.getFullYear());
       // send to HTML
       dynamicDates.appendChild(createCard);
@@ -394,6 +394,10 @@ function createCalendarDateDynamic()
   }
   for(let ddates = 0; ddates < convertToIntCountFiles; ddates++)
   {
+    const dddd = new Date().getDate().toString().padStart(2, "0");
+    const mmmm = new Date().getMonth().toString().padStart(2, "0");
+    const yyyy = new Date().getFullYear().toString();    
+
     let splitDateInSched = splittedDateIn[ddates].split('/');
     let mmm = splitDateInSched[0];
     let ddd = splitDateInSched[1];
@@ -401,7 +405,9 @@ function createCalendarDateDynamic()
     const card_date = mmm+ddd+yyy;
     // highlights certain dates
     const booked_card_date = document.querySelector('.looking_'+card_date);
-    booked_card_date.setAttribute('style', 'background:red;');
+    booked_card_date.classList.add("booked-card");  
+
+    document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");
   }
   // create a dynamic a for focus effect
   const create_a_for_active_month = document.createElement('a');

@@ -49,3 +49,11 @@
 .schedule-row-DP, .schedule-cell-DP{
     border: 1px solid transparent !important;
 }
+
+.active-active{
+    border: 8px solid red !important;
+}
+
+.booked-card{
+    background: blue;
+}
