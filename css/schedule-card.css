@@ -1,4 +1,4 @@
-.card-schedule{
+.card-schedule, .weekly_card_schedule{
     position: relative;            
     top: 0;
     left: 2px;
@@ -7,6 +7,9 @@
     border: 4px solid black;
     border-radius: 16px;
     margin: 2px;
+}
+.weekly_card_schedule{
+    height: 46vh !important;
 }
 .schedule-date-today{
     position: relative;

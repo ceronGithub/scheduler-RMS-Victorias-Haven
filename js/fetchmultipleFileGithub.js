@@ -294,7 +294,7 @@ function createCalendarDateDynamic()
 
       const createCard_package = document.createElement('div');
       const cardName_package = "cardPackageFor_"+monthString+day+year.getFullYear();
-      createCard_package.setAttribute("class", "schedule-row-guest "+cardName_package);
+      createCard_package.setAttribute("class", "schedule-row-package "+cardName_package);
       card_class_name.appendChild(createCard_package);
 
       const card_package_objects = document.querySelector('.'+cardName_package);
@@ -432,7 +432,7 @@ function createCalendarDateDynamic()
     }      
   }
 
-  // HighLights the booked cards
+  // HighLights the booked cards LOGIC!!!!
   for(let index = 0; index < convertToIntCountFiles; index++)
   {
     let splitDateInSched = splittedDateIn[index].split('/');
@@ -466,13 +466,10 @@ function createCalendarDateDynamic()
 
     // highlights certain dates
     const booked_card_date = document.querySelector('.looking_'+card_date);
-    booked_card_date.classList.add("booked-card");  
-
-    console.log(splittedName[index]);
+    booked_card_date.classList.add("booked-card");    
 
     document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");    
   }
-  
 
   const mmmmonth = new Date().getMonth() + 1;
   // create a dynamic a for focus effect
