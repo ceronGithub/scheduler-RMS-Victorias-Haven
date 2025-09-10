@@ -1,0 +1,32 @@
+/* legend */
+.legend{
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;    
+}
+.legend .legend_one, .legend_two, .legend_three{
+    position: relative;
+    width: calc(100% / 3);
+    height: 8vh;    
+    display: flex;    
+    justify-content: center;
+    align-items: center;    
+}
+
+.legend_one .legend_green, .legend_blue, .legend_red{
+    width: 50px;
+    height: 30px;
+    background: green;
+    margin-right: 10px;   
+}
+.legend_blue{
+    background: blue !important;
+}
+.legend_red{
+    background: transparent;
+    border-radius: 4px;
+    border: 6px solid red;
+}
