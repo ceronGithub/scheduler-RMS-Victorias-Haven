@@ -284,7 +284,7 @@ function createCalendarDateDynamic()
       card_schedule_date_header_objects_h5.innerHTML = 'Schedule Date: ';
       var card_schedule_date_header_objects_h4 = document.createElement('h4');
       // -----------------------------------------------------------
-      card_schedule_date_header_objects_h4.setAttribute("class", "scheduleData_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      card_schedule_date_header_objects_h4.setAttribute("class", "guestScheduleDate_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
       // -----------------------------------------------------------
       card_schedule_date_header_objects_h4.innerHTML = '? - ?';
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h5);
@@ -304,7 +304,7 @@ function createCalendarDateDynamic()
       card_package_objects_h6.innerHTML = 'Package:';
       var card_package_objects_h4 = document.createElement('h4');
       // -----------------------------------------------------------
-      card_package_objects_h4.setAttribute("class", "packageDeal_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      card_package_objects_h4.setAttribute("class", "guestPackageDeal_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
       // -----------------------------------------------------------
       card_package_objects_h4.innerHTML = '-';
       card_package_objects.appendChild(card_package_objects_h6);
@@ -357,7 +357,7 @@ function createCalendarDateDynamic()
               
               create_cell_objects_h6.innerHTML = 'Check-in:';  
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "checkInTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestCheckInTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------          
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -365,7 +365,7 @@ function createCalendarDateDynamic()
             {
               create_cell_objects_h6.innerHTML = 'Check-Out:';
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "checkOutTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestCheckOutTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------             
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -375,7 +375,7 @@ function createCalendarDateDynamic()
             {                 
               create_cell_objects_h6.innerHTML = 'Pax:'; 
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "ttlPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestTtlPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -383,7 +383,7 @@ function createCalendarDateDynamic()
             {
               create_cell_objects_h6.innerHTML = 'Extra Pax:'; 
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "ttlExtraPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestTtlExtraPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -393,7 +393,7 @@ function createCalendarDateDynamic()
             {                 
               create_cell_objects_h6.innerHTML = 'Pets (Small):';     
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "petSmall_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestPetSmall_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------        
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -401,7 +401,7 @@ function createCalendarDateDynamic()
             {
               create_cell_objects_h6.innerHTML = 'Pets (Big):';     
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "petBig_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestPetBig_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------        
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -411,7 +411,7 @@ function createCalendarDateDynamic()
             {                 
               create_cell_objects_h6.innerHTML = 'Downpayment:'; 
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "downpanyment_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestDownpanyment_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -419,7 +419,7 @@ function createCalendarDateDynamic()
             {
               create_cell_objects_h6.innerHTML = 'Balance:';   
               // -----------------------------------------------------------
-              create_cell_objects_h4.setAttribute("class", "balance_"+ new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              create_cell_objects_h4.setAttribute("class", "guestBalance_"+ new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
               // -----------------------------------------------------------          
               create_cell_objects_h4.innerHTML = '-';
             }
@@ -445,29 +445,28 @@ function createCalendarDateDynamic()
     _guestName.innerHTML = splittedName[index];
     const guestNumber = document.querySelector('.guestNumber_'+mmm+ddd);
     guestNumber.innerHTML = splittedPhoneNumber[index];
-    const scheduleData = document.querySelector('.scheduleData_'+mmm+ddd);   
-    scheduleData.innerHTML = splittedDateIn[index] + " - " + splittedDateOut[index];
-    const packageDeal = document.querySelector('.packageDeal_'+mmm+ddd);
+    const scheduleDate = document.querySelector('.guestScheduleDate_'+mmm+ddd);   
+    scheduleDate.innerHTML = splittedDateIn[index] + " - " + splittedDateOut[index];
+    const packageDeal = document.querySelector('.guestPackageDeal_'+mmm+ddd);
     packageDeal.innerHTML = splittedPackage[index];
-    const checkInTime = document.querySelector('.checkInTime_'+mmm+ddd);
-    checkInTime.innerHTML = splittedDateIn[index];
-    const checkOutTime = document.querySelector('.checkOutTime_'+mmm+ddd);
-    checkOutTime.innerHTML = splittedDateOut[index];
-    const ttlPax = document.querySelector('.ttlPax_'+mmm+ddd);
+    const checkInTime = document.querySelector('.guestCheckInTime_'+mmm+ddd);
+    checkInTime.innerHTML = splittedCheckIn[index];
+    const checkOutTime = document.querySelector('.guestCheckOutTime_'+mmm+ddd);
+    checkOutTime.innerHTML = splittedCheckOut[index];
+    const ttlPax = document.querySelector('.guestTtlPax_'+mmm+ddd);
     ttlPax.innerHTML = splittedPax[index];
-    const ttlExtraPax = document.querySelector('.ttlExtraPax_'+mmm+ddd);
+    const ttlExtraPax = document.querySelector('.guestTtlExtraPax_'+mmm+ddd);
     ttlExtraPax.innerHTML = splittedExtraPax[index];
-    const petSmall = document.querySelector('.petSmall_'+mmm+ddd);
-    const petBig = document.querySelector('.petBig_'+mmm+ddd);
-    const downpanyment = document.querySelector('.downpanyment_'+mmm+ddd);
+    const petSmall = document.querySelector('.guestPetSmall_'+mmm+ddd);
+    const petBig = document.querySelector('.guestPetBig_'+mmm+ddd);
+    const downpanyment = document.querySelector('.guestDownpanyment_'+mmm+ddd);
     downpanyment.innerHTML = splittedDP[index];
-    const balance = document.querySelector('.balance_'+mmm+ddd);
+    const balance = document.querySelector('.guestBalance_'+mmm+ddd);
     balance.innerHTML = splittedBalance[index];
 
     // highlights certain dates
     const booked_card_date = document.querySelector('.looking_'+card_date);
-    booked_card_date.classList.add("booked-card");    
-
+    booked_card_date.classList.add("booked-card");   
     document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");    
   }
 
@@ -475,21 +474,14 @@ function createCalendarDateDynamic()
   // create a dynamic a for focus effect
   const create_a_for_active_month = document.createElement('a');
   create_a_for_active_month.setAttribute('id', 'Focus');
-  create_a_for_active_month.setAttribute('href', '#Title_'+ new Date().getMonth()); 
+  create_a_for_active_month.setAttribute('href', '#weekly-card-h1'); 
   
-  const create_a_for_active_dates = document.createElement('a');
-  create_a_for_active_dates.setAttribute('id', 'FocusOne');
-  create_a_for_active_dates.setAttribute('href', '#cardDateIdFor_'+mmmmonth+new Date().getDate());
-
   const put_object_to_main_page = document.querySelector('.main-page');
-  put_object_to_main_page.appendChild(create_a_for_active_month);
-  put_object_to_main_page.appendChild(create_a_for_active_dates); 
-  
+  put_object_to_main_page.appendChild(create_a_for_active_month);    
 }
 
 window.onload = function(){
-  // document.querySelector('#Focus').click();
-  // document.querySelector('#FocusOne').click();
+  document.querySelector('#Focus').click();  
 }
 
 createCalendarDateDynamic();
