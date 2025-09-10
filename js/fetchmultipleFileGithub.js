@@ -186,8 +186,9 @@ function createCalendarDateDynamic()
     
     const year = new Date();
     const month = new Date(year.getFullYear(), Month);        
-    const monthString = month.toLocaleString('default', { month: 'long' }); 
-    const doubleDigitMonth = month.toLocaleString('default', { month: '2-digit' });
+    const monthString = month.toLocaleString('default', { month: 'long' });
+    
+    const doubleDigitMonth = month.toLocaleString('default', { month: '2-digit' });    
     
     document.querySelector('#Title_'+Month).innerHTML = monthString +" / " + year.getFullYear();
 
@@ -226,6 +227,7 @@ function createCalendarDateDynamic()
       const card_class_name = document.querySelector('.'+cardName);
       card_class_name.innerHTML = "";
 
+      // First Div of the card date
       const createCard_card_date_today= document.createElement('div');
       const cardDate = "cardDateFor_"+monthString+day+year.getFullYear();
       createCard_card_date_today.setAttribute("class", "schedule-date-today "+cardDate);
@@ -253,11 +255,17 @@ function createCalendarDateDynamic()
       const card_guest_header_objects = document.querySelector('.'+cardName_guest_Header);
       card_guest_header_objects.innerHTML = "";
 
-      var card_guest_header_objects_h4 = document.createElement('h4');      
+      var card_guest_header_objects_h4 = document.createElement('h4'); 
+      // -----------------------------------------------------------
+      card_guest_header_objects_h4.setAttribute("class", "guestName_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      // ----------------------------------------------------------- 
       card_guest_header_objects_h4.innerHTML = 'Guest Name';
       var card_guest_header_objects_h6 = document.createElement('h6');
       card_guest_header_objects_h6.innerHTML = 'phone number';
-      
+      // -----------------------------------------------------------
+      card_guest_header_objects_h6.setAttribute("class", "guestNumber_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      // -----------------------------------------------------------
+
       card_guest_header_objects.appendChild(card_guest_header_objects_h4);
       card_guest_header_objects.appendChild(card_guest_header_objects_h6);
 
@@ -272,9 +280,12 @@ function createCalendarDateDynamic()
       const card_schedule_date_header_objects = document.querySelector('.'+cardName_schedule_date);
       card_schedule_date_header_objects.innerHTML = "";
 
-      var card_schedule_date_header_objects_h5 = document.createElement('h5');      
+      var card_schedule_date_header_objects_h5 = document.createElement('h5');    
       card_schedule_date_header_objects_h5.innerHTML = 'Schedule Date: ';
       var card_schedule_date_header_objects_h4 = document.createElement('h4');
+      // -----------------------------------------------------------
+      card_schedule_date_header_objects_h4.setAttribute("class", "scheduleData_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      // -----------------------------------------------------------
       card_schedule_date_header_objects_h4.innerHTML = '? - ?';
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h5);
       card_schedule_date_header_objects.appendChild(card_schedule_date_header_objects_h4);
@@ -292,7 +303,10 @@ function createCalendarDateDynamic()
       var card_package_objects_h6 = document.createElement('h6');      
       card_package_objects_h6.innerHTML = 'Package:';
       var card_package_objects_h4 = document.createElement('h4');
-      card_package_objects_h4.innerHTML = '2 Rooms Over-night';
+      // -----------------------------------------------------------
+      card_package_objects_h4.setAttribute("class", "packageDeal_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+      // -----------------------------------------------------------
+      card_package_objects_h4.innerHTML = '-';
       card_package_objects.appendChild(card_package_objects_h6);
       card_package_objects.appendChild(card_package_objects_h4);
 
@@ -340,48 +354,73 @@ function createCalendarDateDynamic()
             case 1:
             if(cells == 1)
             {                 
-              create_cell_objects_h6.innerHTML = 'Check-in:';            
+              
+              create_cell_objects_h6.innerHTML = 'Check-in:';  
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "checkInTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------          
               create_cell_objects_h4.innerHTML = '-';
             }
             else if(cells == 2)
             {
-              create_cell_objects_h6.innerHTML = 'Check-Out:';            
+              create_cell_objects_h6.innerHTML = 'Check-Out:';
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "checkOutTime_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------             
               create_cell_objects_h4.innerHTML = '-';
             }
             break;
             case 2:
             if(cells == 1)
             {                 
-              create_cell_objects_h6.innerHTML = 'Pax:';            
+              create_cell_objects_h6.innerHTML = 'Pax:'; 
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "ttlPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
             else if(cells == 2)
             {
-              create_cell_objects_h6.innerHTML = 'Extra Pax:';            
+              create_cell_objects_h6.innerHTML = 'Extra Pax:'; 
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "ttlExtraPax_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
             break;
             case 3:
             if(cells == 1)
             {                 
-              create_cell_objects_h6.innerHTML = 'Pets (Small):';            
+              create_cell_objects_h6.innerHTML = 'Pets (Small):';     
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "petSmall_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------        
               create_cell_objects_h4.innerHTML = '-';
             }
             else if(cells == 2)
             {
-              create_cell_objects_h6.innerHTML = 'Pets (Big):';            
+              create_cell_objects_h6.innerHTML = 'Pets (Big):';     
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "petBig_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------        
               create_cell_objects_h4.innerHTML = '-';
             }
             break;
             case 4:
             if(cells == 1)
             {                 
-              create_cell_objects_h6.innerHTML = 'Downpayment:';            
+              create_cell_objects_h6.innerHTML = 'Downpayment:'; 
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "downpanyment_"+new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------            
               create_cell_objects_h4.innerHTML = '-';
             }
             else if(cells == 2)
             {
-              create_cell_objects_h6.innerHTML = 'Balance:';            
+              create_cell_objects_h6.innerHTML = 'Balance:';   
+              // -----------------------------------------------------------
+              create_cell_objects_h4.setAttribute("class", "balance_"+ new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{month: '2-digit'}) + new Date(year.getFullYear(), Month, day).toLocaleString("en-US",{day: '2-digit'}));
+              // -----------------------------------------------------------          
               create_cell_objects_h4.innerHTML = '-';
             }
             break;
@@ -392,31 +431,58 @@ function createCalendarDateDynamic()
       }           
     }      
   }
-  for(let ddates = 0; ddates < convertToIntCountFiles; ddates++)
-  {
-    const dddd = new Date().getDate().toString().padStart(2, "0");
-    const mmmm = new Date().getMonth().toString().padStart(2, "0");
-    const yyyy = new Date().getFullYear().toString();    
 
-    let splitDateInSched = splittedDateIn[ddates].split('/');
+  // HighLights the booked cards
+  for(let index = 0; index < convertToIntCountFiles; index++)
+  {
+    let splitDateInSched = splittedDateIn[index].split('/');
     let mmm = splitDateInSched[0];
     let ddd = splitDateInSched[1];
     let yyy = splitDateInSched[2];
     const card_date = mmm+ddd+yyy;
+
+    const _guestName = document.querySelector('.guestName_'+mmm+ddd);
+    _guestName.innerHTML = splittedName[index];
+    const guestNumber = document.querySelector('.guestNumber_'+mmm+ddd);
+    guestNumber.innerHTML = splittedPhoneNumber[index];
+    const scheduleData = document.querySelector('.scheduleData_'+mmm+ddd);   
+    scheduleData.innerHTML = splittedDateIn[index] + " - " + splittedDateOut[index];
+    const packageDeal = document.querySelector('.packageDeal_'+mmm+ddd);
+    packageDeal.innerHTML = splittedPackage[index];
+    const checkInTime = document.querySelector('.checkInTime_'+mmm+ddd);
+    checkInTime.innerHTML = splittedDateIn[index];
+    const checkOutTime = document.querySelector('.checkOutTime_'+mmm+ddd);
+    checkOutTime.innerHTML = splittedDateOut[index];
+    const ttlPax = document.querySelector('.ttlPax_'+mmm+ddd);
+    ttlPax.innerHTML = splittedPax[index];
+    const ttlExtraPax = document.querySelector('.ttlExtraPax_'+mmm+ddd);
+    ttlExtraPax.innerHTML = splittedExtraPax[index];
+    const petSmall = document.querySelector('.petSmall_'+mmm+ddd);
+    const petBig = document.querySelector('.petBig_'+mmm+ddd);
+    const downpanyment = document.querySelector('.downpanyment_'+mmm+ddd);
+    downpanyment.innerHTML = splittedDP[index];
+    const balance = document.querySelector('.balance_'+mmm+ddd);
+    balance.innerHTML = splittedBalance[index];
+
     // highlights certain dates
     const booked_card_date = document.querySelector('.looking_'+card_date);
     booked_card_date.classList.add("booked-card");  
 
-    document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");
+    console.log(splittedName[index]);
+
+    document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");    
   }
+  
+
+  const mmmmonth = new Date().getMonth() + 1;
   // create a dynamic a for focus effect
   const create_a_for_active_month = document.createElement('a');
   create_a_for_active_month.setAttribute('id', 'Focus');
-  create_a_for_active_month.setAttribute('href', '#Title_'+new Date().getMonth()); 
+  create_a_for_active_month.setAttribute('href', '#Title_'+ new Date().getMonth()); 
   
   const create_a_for_active_dates = document.createElement('a');
   create_a_for_active_dates.setAttribute('id', 'FocusOne');
-  create_a_for_active_dates.setAttribute('href', '#cardDateIdFor_'+new Date().getMonth()+new Date().getDate());
+  create_a_for_active_dates.setAttribute('href', '#cardDateIdFor_'+mmmmonth+new Date().getDate());
 
   const put_object_to_main_page = document.querySelector('.main-page');
   put_object_to_main_page.appendChild(create_a_for_active_month);
@@ -425,8 +491,8 @@ function createCalendarDateDynamic()
 }
 
 window.onload = function(){
-  document.querySelector('#Focus').click();
-  document.querySelector('#FocusOne').click();
+  // document.querySelector('#Focus').click();
+  // document.querySelector('#FocusOne').click();
 }
 
 createCalendarDateDynamic();

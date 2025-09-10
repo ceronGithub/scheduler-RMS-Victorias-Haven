@@ -1,0 +1,14 @@
+.weekly-card-container{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 50vh;
+    border: 1px solid red;  
+    display: flex;
+}
+
+#weekly-card-h1{
+    position: absolute;
+    top: 18%;
+    left: 40%;
+}
