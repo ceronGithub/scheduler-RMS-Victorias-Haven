@@ -60,3 +60,7 @@
 .booked-card{
     background: blue;
 }
+
+.finished-card{
+    background: green;
+}

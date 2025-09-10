@@ -466,7 +466,12 @@ function createCalendarDateDynamic()
 
     // highlights certain dates
     const booked_card_date = document.querySelector('.looking_'+card_date);
-    booked_card_date.classList.add("booked-card");   
+    booked_card_date.classList.add("booked-card");       
+    if(splittedDateIn[index] < new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()).toLocaleString("en-US", {month : '2-digit', day: '2-digit', year: 'numeric'}))
+    {
+      booked_card_date.classList.remove("booked-card");
+      booked_card_date.classList.add("finished-card");      
+    }
     document.querySelector('.looking_'+ ((new Date().getMonth() + 1).toString().padStart(2, "0")) + (new Date().getDate().toString().padStart(2, "0")) + (new Date().getFullYear().toString().padStart(2, "0")) ).classList.add("active-active");    
   }
 
