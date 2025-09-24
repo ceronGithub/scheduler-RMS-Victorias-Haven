@@ -1,7 +1,7 @@
 const owner = 'ceronGithub';
 const repo = 'scheduler-records';
 const branch = 'main';
-const pat = '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';
+const pat = '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';
 
 async function fetchFileTree() {
   const treeUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
