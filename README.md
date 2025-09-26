@@ -4,3 +4,6 @@ github profile setting > Developer Settings > Personal access tokens > Fine-grai
 
 # deploy IIS
 https://www.youtube.com/watch?v=VMyMag9_vmc
+
+# article #1
+https://stackoverflow.com/questions/66236420/accessing-a-deployed-website-on-iis-on-a-different-machine-on-the-network
